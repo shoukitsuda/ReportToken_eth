@@ -1,8 +1,7 @@
 # ReportToken_eth
-# reportoken_eth
 repotokenのスマートコントラクト用のレポジトリー
 
-# truffle
+## truffle
 Ethereumの開発プラットフォームです。(RailsとかNuxt.js的な)
 「スマートコントラクトをtruffleで実装→Ganacheでデプロイ」という形で開発できます。
 
@@ -11,13 +10,13 @@ https://github.com/trufflesuite/ganache
 /truffleのセッティング/
 npm install -g truffle
 
-/truffleのコマンドとか/
+/truffleのコマンド/
 Compile:        truffle compile
 Migrate:        truffle migrate
 Console:        truffle console
 Test contracts: truffle test
 
-# Ganache
+## Ganache
 チェーンの動作を制御しながらテストの実行、コマンドの実行、ステートの精査に使用できる
 「個人のイーサリアムブロックチェーン」です。
 
@@ -31,10 +30,10 @@ https://www.trufflesuite.com/ganache
 ・truffle-config.jsファイルのパスをGanacheのワークスペースに追加する。
 ・セーブして終了
 
-# RemixIDE
-Web上でスマートコントラクトを開発できるオンラインIDEです。
+## RemixIDE
+Web上でスマートコントラクトを開発できるオンラインIDE
 Metamaskと一緒に使うことができ、メインネットにデプロイしたいときに利用できる。
 
-# Metamask
+## Metamask
 Ethereumのウォレットで、Googleのアプリケーションとして利用できる。
 様々なEthereumネットワークに接続できる。
