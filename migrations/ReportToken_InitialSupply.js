@@ -1,4 +1,3 @@
-//var?
 var ReportToken = artifacts.require("ReportToken");
 
 module.exports = function(deployer) {

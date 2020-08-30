@@ -8,21 +8,15 @@ contract ReportToken is ERC20 {
         _mint(msg.sender, initialSupply);
     }
 
-    event Transfer(
-        address indexed _from,
-        address indexed _to,
-        uint256 _value
-    );
+    //event setup
+    event Transfer(address indexed _from, address indexed _to, uint256 _value);
+    event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
-    event Approval(
-        address indexed _owner,
-        address indexed _spender,
-        uint256 _value
-    );
-
+    //mapping
     mapping(address => uint256) public balances;
     mapping(address => mapping(address => uint256)) public allowed;
 
+    //Transfer function
     function transfer(address _to, uint256 _value) public override returns (bool success) {
         require(balances[msg.sender] >= _value);
         balances[msg.sender] -= _value;
@@ -30,7 +24,7 @@ contract ReportToken is ERC20 {
         emit Transfer(msg.sender, _to, _value);
         return true;
     }
-
+    //Approve function
     function approve(address _spender, uint256 _value) public override returns (bool success) {
         //allowance
         allowed[msg.sender][_spender] = _value;
@@ -39,7 +33,7 @@ contract ReportToken is ERC20 {
 
         return true;
     }
-
+    //tranferFrom function
     function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success) {
 
         require(_value <= balances[_from]);
@@ -53,6 +47,4 @@ contract ReportToken is ERC20 {
         emit Transfer(_from, _to, _value);
         return true;
     }
-
-
 }
