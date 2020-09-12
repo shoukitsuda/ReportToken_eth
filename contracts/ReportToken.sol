@@ -15,6 +15,13 @@ contract ReportToken is ERC20 {
     //mapping
     mapping(address => uint256) public balances;
     mapping(address => mapping(address => uint256)) public allowed;
+    mapping(address => uint256) public userBalance;
+
+    function parchaceToken(address user, uint256 balance) public payable returns (bool){
+        _mint(user, balance);
+        userBalance(user, balance);
+        return true;
+}
 
     //Transfer function
     function transfer(address _to, uint256 _value) public override returns (bool success) {
